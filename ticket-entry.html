@@ -1,0 +1,155 @@
+<!-- <?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+?> -->
+ 
+
+
+<!DOCTYPE html>
+<html lang="en"> 
+	<head>
+		<meta charset="utf-8"/>
+		<title> CANDY - Login </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--ICON===============================================================================================-->	<link rel="icon" type="image/png" href="images/icons/CANDY.PNG"/>
+
+
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="include/css/main.css">
+		<script src="/Numbers/js/login.js"></script>
+	</head>
+	<body>
+
+  <form id ="LoteriaAndNumero" class = "col s12">
+        <div class = "container">
+<!--Loteria ROW-->   
+            <div class = "row">
+            <div class="col s12">
+            <!--Loteria Select Drop Menu-->
+              <label for="loteria">LOTERIA</label>
+              <select name="loteria" id="loteria" class="browser-default" >
+                <option value="" disabled selected>Choose your option</option>
+                <option value="LOTEKA">LOTEKA</option>
+                <option value="NEW YORK PM">NEW YORK PM</option>
+                <option value="S.PALE NOCHE">S.PALE NOCHE</option>
+                <option value="QUINIELA PALE">QUINIELA PALE</option>
+                <option value="NACIONAL">NACIONAL</option>
+                <option value="FLORIDA PM">FLORIDA PM</option>
+                <option value="LA PRIMERA">LA PRIMERA</option>
+                <option value="NEW YORK AM">NEW YORK AM</option>
+                <option value="S.PALE TARDE">S.PALE TARDE</option>
+                <option value="LOTERIA REAL">LOTERIA REAL</option>
+                <option value="FLORIDA AM">FLORIDA AM</option>
+              </select>
+            </div>
+            </div>
+
+            
+<!--Ticket Table Inputs-->
+
+<div class="row">
+
+<table>
+      <tr>  
+      </tr>
+<!--Numero ROW-->
+  <div class="col s12">
+<!--Numero TR-->
+  <tr>
+      <div class="input-field col s4">
+      <input id="numero" type="number" keyboardType = "numeric" class="validate">
+      <label for="numero">NUMERO</label>
+    </div>
+
+  </tr>
+<!--Disponible TR-->
+  <tr>
+      <!--Disponible Field-->
+      <div class="input-field col s4">
+        <input disabled value="DISPONIBLE" id="disabled" type="text" class="validate">
+        
+      </div>
+  </tr>
+<!--Monto TR-->
+  <tr>
+    <div class="input-field col s4">
+      <input id="monto" type="number" keyboardType = "numeric" class="validate">
+      <label for="monto">MONTO</label>
+    </div>
+  </tr>
+</table>
+</div>
+
+
+</div>
+</div>
+
+</div>
+</form>  
+
+<!--Ticket Table-->
+
+<div class="input-field center">
+
+
+
+<p>
+  <input type="button" id="addRow" value="Add New Row" onclick="addRow()" />
+  </p>
+    <div id="cont"></div>  <!-- the container to add the TABLE -->    
+    <p id='output'></p>
+    
+
+</div>
+
+<!--Total ROW-->
+<div class="row">
+  <div class="col s12">
+    <!--Total Field-->
+    <div class="input-field col s3">
+      <input disabled id="total_disabled" type="text" class="validate">
+      <label for="disabled">Total</label>
+    </div>
+
+    <!-- Print Switch -->
+    <div class="switch input-field col s3">
+      <label>IMPRIMIR
+      <input type="checkbox">
+      <span class="lever"></span>
+      </label>
+    </div>
+
+    <!-- WHATSAPP Switch -->
+    <div class="switch input-field col s3">
+      <label>WHATSAPP
+      <input type="checkbox">
+      <span class="lever"></span>
+      </label>
+    </div>
+
+    <!-- DISCOUNT Switch -->
+    <div class="switch input-field col s3">
+      <label>DESC.
+      <input type="checkbox">
+      <span class="lever"></span>
+      </label>
+    </div>
+  </div>
+  </div>
+
+<!--Print BTN-->
+  <div class="input-field center">
+    <button class="btn-large" onclick="submit()">Print</button>
+  </div>
+  
+  
+</body>
+
+</html>
